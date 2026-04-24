@@ -11,12 +11,14 @@ type Task struct{
 
 }
 
-func AddTask(name string, tasks []Task){
+func AddTask(name string, tasks []Task) []Task {
 	t := Task{
 		Name: name,
 		isCompleted: false,
 		createdAt: time.Now(),
 		updatedAt: time.Now(),
 	}
-	tasks = append(t, tasks)
+	tasks = append(tasks, t)
+	return tasks
+	
 }
