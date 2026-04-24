@@ -29,3 +29,13 @@ func ListTasks(tasks []Task){
 		fmt.Printf("Task Name: %v isCompleted: %v\n",task.Name,task.isCompleted)
 	}
 }
+
+func DeleteTask(name string, tasks []Task) ([]Task, error) {
+	for i,task := range tasks{
+		if task.Name == name{
+			tasks = append(tasks[:i],tasks[i+1:]...)
+			return tasks,nil
+		}
+	}
+	return tasks,fmt.Errorf("task not found")
+}

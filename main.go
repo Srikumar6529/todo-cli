@@ -1,6 +1,8 @@
 package main
 
-
+import(
+	"fmt"
+)
 func main(){
 	//lets build a simple cli based todo app
 	//it needs to do 4 things
@@ -12,5 +14,10 @@ func main(){
 	tasks = AddTask("sampleTask1",tasks)
 	tasks = AddTask("sampleTask2",tasks)
 	tasks = AddTask("sampleTask3",tasks)
+	ListTasks(tasks)
+	tasks,err := DeleteTask("sampleTask3",tasks)
+	if err!=nil{
+		fmt.Print(err)
+	}
 	ListTasks(tasks)
 }
