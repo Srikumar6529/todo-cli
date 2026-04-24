@@ -1,6 +1,7 @@
 package main
 import (
 	"time"
+	"fmt"
 )
 // task has a name, isCompleted, createdat, updatedat
 type Task struct{
@@ -21,4 +22,10 @@ func AddTask(name string, tasks []Task) []Task {
 	tasks = append(tasks, t)
 	return tasks
 	
+}
+
+func ListTasks(tasks []Task){
+	for _,task := range tasks{
+		fmt.Printf("Task Name: %v isCompleted: %v\n",task.Name,task.isCompleted)
+	}
 }

@@ -1,8 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
 
 func main(){
 	//lets build a simple cli based todo app
@@ -13,6 +10,7 @@ func main(){
 	//delete a todo task
 	var tasks []Task
 	tasks = AddTask("sampleTask1",tasks)
-	fmt.Println("this is a sample task")
-	fmt.Println(tasks)
+	tasks = AddTask("sampleTask2",tasks)
+	tasks = AddTask("sampleTask3",tasks)
+	ListTasks(tasks)
 }
